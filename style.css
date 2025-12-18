@@ -1,0 +1,261 @@
+/* === RESETEO Y FUENTE GENERAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === FONDO === */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #0a0f2c; /* Azul noche */
+}
+
+/* === EFECTO DE DESENFOQUE === */
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 18, 55, 0.92);
+    border: 2px solid rgba(140, 90, 255, 0.85);
+    border-radius: 20px;
+    padding: 35px 28px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    color: #eef1ff;
+    box-shadow: 
+        0 0 28px rgba(140, 90, 255, 0.7),
+        inset 0 0 14px rgba(80, 120, 255, 0.3);
+}
+
+#titulo-logo {
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+/* === LOGO === */
+.logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+/* === INPUTS === */
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 40px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+    color: #ffffff;
+    background: rgba(20, 25, 80, 0.95);
+    box-shadow: inset 0 0 10px rgba(80, 140, 255, 0.5);
+}
+
+.input::placeholder {
+    color: #a9b2ff;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 22px;
+    width: auto;
+}
+
+.moneda-1 {
+    height: 22px;
+    width: 22px;
+}
+
+/* === BOTONES === */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8c5aff, #00c8ff);
+    border: none;
+    border-radius: 8px;
+    color: #0a0f2c;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(140, 90, 255, 0.85);
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #b28cff, #4ddcff);
+    box-shadow: 0 0 30px rgba(80, 200, 255, 1);
+}
+
+#sendBtn {
+    color: #14004d;
+    text-shadow: 0 0 10px rgba(140, 90, 255, 1);
+}
+
+/* === SPINNER === */
+.spinner {
+    display: none;
+    margin: 15px auto 0;
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    border-top: 4px solid #8c5aff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* === MINI BOTONES DE PLATAFORMA === */
+.platforms {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.mini-btn {
+    flex: 1 1 30%;
+    max-width: 90px;
+    min-width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(25, 30, 90, 0.95);
+    color: #c6c9ff;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    box-shadow: 0 0 12px rgba(140, 90, 255, 0.6);
+}
+
+.mini-btn:hover {
+    background: rgba(80, 70, 160, 1);
+    color: #ffffff;
+}
+
+/* === SECCIONES === */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* === MONEDA GIRATORIA === */
+.coin {
+    width: 150px;
+    margin: 25px 0;
+    animation: spinCoin 6s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.9));
+}
+
+@keyframes spinCoin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* === TEXTO DE CANTIDAD === */
+.amount-display {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.coins-text {
+    color: #9ad5ff;
+}
+
+#displayAmount {
+    color: #ffffff;
+}
+
+/* === CONFETI === */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    opacity: 0.85;
+    animation: fall 3s linear infinite;
+    z-index: 99;
+    background: linear-gradient(45deg, #8c5aff, #00c8ff);
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* === TEXTO DE FELICITACIÓN === */
+.congratu {
+    font-size: 130%;
+    color: #c9b6ff;
+}
+
+/* === FILA DE PREMIOS EN 2 COLUMNAS === */
+.reward-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.reward-box {
+    text-align: center;
+}
+
+.reward-box .coin {
+    width: 110px;
+    margin: 0;
+}
+
+.reward-box .amount-display {
+    margin-top: 5px;
+}
